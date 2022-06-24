@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/maramayo95/loggers_gzip_analisis_performance#readme",
   "dependencies": {
+    "autocannon": "^7.9.0",
     "bcrypt": "^5.0.1",
     "child-process": "^1.0.2",
     "cluster": "^0.7.7",

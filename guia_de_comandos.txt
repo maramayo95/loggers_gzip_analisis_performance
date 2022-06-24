@@ -1,0 +1,51 @@
+node --prof index.js 
+
+curl -X GET http://localhost:8080/ecommerce/info
+
+node --prof-process nobloq-v8.log > resultado_bloqueante.txt
+
+Crea bloc de notas , resultado bloqueante
+
+
+Emula 50 clientes de 20 peticiones 
+
+artillery quick -o result.json --count 50 -n 20 http://localhost:8080/ecommerce/info
+
+Genera un html con todos los errores
+artillery report result.json 
+
+
+Autocannon 0x
+$ 0x index.js
+Profiling[2022-06-23T23:59:56.832] [INFO] default - Se ejecutó en modo FORK.
+[2022-06-23T23:59:56.843] [INFO] default - http://localhost:8080/ecommerce/
+
+Para generar toda la info de process en profiling
+$ curl -X GET http://localhost:8080/ecommerce/info
+
+
+$ node benchmark.js
+Running 20s test @ http://localhost:8080/ecommerce/info
+100 connections
+
+
+┌─────────┬───────┬───────┬───────┬───────┬──────────┬─────────┬────────┐
+│ Stat    │ 2.5%  │ 50%   │ 97.5% │ 99%   │ Avg      │ Stdev   │ Max    │
+├─────────┼───────┼───────┼───────┼───────┼──────────┼─────────┼────────┤
+│ Latency │ 37 ms │ 42 ms │ 66 ms │ 75 ms │ 43.98 ms │ 7.74 ms │ 149 ms │
+└─────────┴───────┴───────┴───────┴───────┴──────────┴─────────┴────────┘
+┌───────────┬────────┬────────┬─────────┬─────────┬─────────┬────────┬────────┐
+│ Stat      │ 1%     │ 2.5%   │ 50%     │ 97.5%   │ Avg     │ Stdev  │ Min    │
+├───────────┼────────┼────────┼─────────┼─────────┼─────────┼────────┼────────┤
+│ Req/Sec   │ 1507   │ 1507   │ 2303    │ 2393    │ 2246.65 │ 203.96 │ 1507   │
+├───────────┼────────┼────────┼─────────┼─────────┼─────────┼────────┼────────┤
+│ Bytes/Sec │ 876 kB │ 876 kB │ 1.34 MB │ 1.39 MB │ 1.31 MB │ 118 kB │ 875 kB │
+└───────────┴────────┴────────┴─────────┴─────────┴─────────┴────────┴────────┘
+
+Req/Bytes counts sampled once per second.
+# of samples: 20
+
+45k requests in 20.03s, 26.1 MB read
+
+
+Al tirar el servidor generó el flamegraph
