@@ -39,7 +39,7 @@ rutas.get('/register', (req, res) => {
 
 rutas.get('/error', (req, res) => {
     try {
-        logger.info('No estas logueado amigo')
+        logger.info('El usuario necesita loggearse')
         if (req.isAuthenticated()) return res.redirect('/ecommerce')
         res.render('error-login')
     res.render('register')

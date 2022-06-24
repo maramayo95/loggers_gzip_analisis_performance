@@ -1,16 +1,23 @@
 {
-  "name": "desafio-passport-mongodb",
+  "name": "loggers_gzip_analisis_performance",
   "version": "1.0.0",
-  "description": "",
+  "description": "- Comandos",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maramayo95/loggers_gzip_analisis_performance.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maramayo95/loggers_gzip_analisis_performance/issues"
+  },
+  "homepage": "https://github.com/maramayo95/loggers_gzip_analisis_performance#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "child-process": "^1.0.2",
